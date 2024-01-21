@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "888226779462",
+    "project_id": "nur-yupek",
+    "storage_bucket": "nur-yupek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888226779462:android:bbc412cd7cb628c1fcd547",
+        "android_client_info": {
+          "package_name": "com.example.first_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888226779462-n9o0a6a6abdddl64igs7ija12rifqsae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPNtX_IDPGipa2RQFDdZAHpTQBYNgv-jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888226779462-n9o0a6a6abdddl64igs7ija12rifqsae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

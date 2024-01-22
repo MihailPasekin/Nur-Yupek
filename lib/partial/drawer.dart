@@ -1,99 +1,86 @@
 import 'package:flutter/material.dart';
 
-String uid = '';
-class BuildDrawer extends StatefulWidget {
-  const BuildDrawer({super.key});
+/// Flutter code sample for [Drawer].
 
-  @override
-  State<BuildDrawer> createState() => _BuildDrawerState();
-}
+void main() => runApp(const DrawerApp());
 
-class _BuildDrawerState extends State<BuildDrawer> {
+class DrawerApp extends StatelessWidget {
+  const DrawerApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: <Widget>[
-          ListTile(
-            title: Text("d"),
-            leading: const Icon(Icons.home),
-            onTap: () {
-              
-            },
-          ),
-          ListTile(
-            title: Text(" "),
-            leading: const Icon(Icons.account_box),
-            onTap: () {
-              if (uid == '0') {
-              } else {
-                
-              }
-            },
-          ),
-          ListTile(
-            title: Text(""),
-            leading: const Icon(Icons.logout),
-            onTap: () {
-              showDialog<String>(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(""),
-                  actions: <Widget>[
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text("Ok"),
-                    ),
-                  ],
+    return MaterialApp(
+      theme: ThemeData(useMaterial3: true),
+      home: const DrawerExample(),
+    );
+  }
+}
+
+class DrawerExample extends StatefulWidget {
+  const DrawerExample({super.key});
+
+  @override
+  State<DrawerExample> createState() => _DrawerExampleState();
+}
+
+class _DrawerExampleState extends State<DrawerExample> {
+  String selectedPage = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Drawer Example'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Drawer Header',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
                 ),
-              );
-              
-            },
-          ),
-          ListTile(
-            title: Text(" "),
-            leading: const Icon(Icons.create_sharp),
-            onTap: () {
-              if (uid == '0') {
-                
-              } else {
-                
-              }
-            },
-          ),
-          ListTile(
-            title: Text(" "),
-            leading: const Icon(Icons.language),
-            onTap: () {
-            },
-          ),
-          /*
-          ListTile(
-            title: const Text('Invoice list'),
-            onTap:  (){
-              if(uid == '0') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
-              }
-              else{
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SearchInvoice(),
-                  ),
-                );
-              }
-            },
-          ),*/
-        ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.message),
+              title: const Text('Messages'),
+              onTap: () {
+                setState(() {
+                  selectedPage = 'Messages';
+                });
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.account_circle),
+              title: const Text('Profile'),
+              onTap: () {
+                setState(() {
+                  selectedPage = 'Profile';
+                });
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                setState(() {
+                  selectedPage = 'Settings';
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        child: Text('Page: $selectedPage'),
       ),
     );
   }
-
-
-  onClickCreateOrder() {}
 }

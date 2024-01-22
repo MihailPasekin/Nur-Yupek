@@ -1,3 +1,4 @@
+import 'package:first_project/screens/mainscreens.dart';
 import 'package:first_project/screens/startingwidget/statring_widget_four.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,12 @@ class StartingWidgetThree extends StatelessWidget {
                   child: Image.asset('assets/images/start_app_list_3.png')),
               Positioned(
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainScreens(),
+                  ),
+                );},
                       child: const Text(
                         "Пропустить",
                         style: TextStyle(color: Colors.white, fontSize: 20),
